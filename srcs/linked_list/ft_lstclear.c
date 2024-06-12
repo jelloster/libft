@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: motuomin <motuomin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 17:30:10 by motuomin          #+#    #+#             */
-/*   Updated: 2024/04/22 12:56:05 by motuomin         ###   ########.fr       */
+/*   Created: 2024/04/19 17:55:35 by motuomin          #+#    #+#             */
+/*   Updated: 2024/04/22 12:47:56 by motuomin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Desription : Allocates (with malloc(3)) and returns a new node. The member
- * variable ’content’ is initialized with the value of the parameter ’content’.
- * The variable ’next’ is initialized to NULL. */
+/* Desription : Deletes and frees the given node and every successor of that
+ * node, using the function ’del’ and free(3). Finally, the pointer to the list
+ * must be set to NULL. */
 
 #include <stdlib.h>
-#include "libft.h"
+#include "../../inc/libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*node;
+	t_list	*temp;
 
-	node = malloc(sizeof(t_list));
-	if (!node)
-		return (NULL);
-	node -> content = content;
-	node -> next = NULL;
-	return (node);
+	if (lst == NULL)
+		return ;
+	node = *lst;
+	while (node != NULL)
+	{
+		(*del)(node->content);
+		temp = node->next;
+		free(node);
+		node = temp;
+	}
+	*lst = NULL;
 }

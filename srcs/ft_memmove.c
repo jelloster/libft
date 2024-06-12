@@ -6,7 +6,7 @@
 /*   By: motuomin <motuomin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 16:07:50 by motuomin          #+#    #+#             */
-/*   Updated: 2024/04/23 13:48:16 by motuomin         ###   ########.fr       */
+/*   Updated: 2024/04/19 15:40:20 by motuomin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,13 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		return (dst);
 	if ((unsigned char *)dst > (unsigned char *)src)
 	{
-		i = len;
+		i = len - 1;
 		while (i > 0)
 		{
-			i--;
 			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+			i--;
 		}
+		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
 	}
 	else
 	{

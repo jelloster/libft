@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: motuomin <motuomin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 17:37:18 by motuomin          #+#    #+#             */
-/*   Updated: 2024/04/22 16:03:53 by motuomin         ###   ########.fr       */
+/*   Created: 2024/04/19 17:48:25 by motuomin          #+#    #+#             */
+/*   Updated: 2024/04/22 12:28:12 by motuomin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Description : Adds the node ’new’ at the beginning of the list. */
+/* Description : Returns the last node of the list. */
 
-#include "libft.h"
+#include "../../inc/libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+t_list	*ft_lstlast(t_list *lst)
 {
-	if (lst && new)
-	{
-		new -> next = *lst;
-		*lst = new;
-	}
+	if (lst == NULL)
+		return (NULL);
+	while (lst -> next != NULL)
+		lst = lst -> next;
+	return (lst);
 }

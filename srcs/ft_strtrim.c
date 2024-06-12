@@ -6,7 +6,7 @@
 /*   By: motuomin <motuomin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 13:42:01 by motuomin          #+#    #+#             */
-/*   Updated: 2024/04/23 11:09:26 by motuomin         ###   ########.fr       */
+/*   Updated: 2024/04/19 11:59:35 by motuomin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
  * string. */
 
 #include <stdlib.h>
-#include "libft.h"
+#include "../inc/libft.h"
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -33,7 +33,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (ft_strdup(""));
 	while (ft_strchr(set, s1[end]) && end >= 0)
 		end--;
-	trim = malloc(sizeof(char) * (end - start + 2));
+	trim = malloc(sizeof(char) * (end - start) + 2);
 	if (!trim)
 		return (NULL);
 	ft_strlcpy(trim, s1 + start, end - start + 2);

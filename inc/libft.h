@@ -6,7 +6,7 @@
 /*   By: motuomin <motuomin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 17:39:31 by motuomin          #+#    #+#             */
-/*   Updated: 2024/04/22 16:27:53 by motuomin         ###   ########.fr       */
+/*   Updated: 2024/06/12 14:30:14 by motuomin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H 
 
 # include <stddef.h>
+# include "ft_printf.h"
 
 typedef struct s_list
 {

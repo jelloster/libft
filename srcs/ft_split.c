@@ -6,7 +6,7 @@
 /*   By: motuomin <motuomin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 15:41:28 by motuomin          #+#    #+#             */
-/*   Updated: 2024/04/23 12:39:54 by motuomin         ###   ########.fr       */
+/*   Updated: 2024/04/19 16:48:12 by motuomin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
  * must end with a NULL pointer. */
 
 #include <stdlib.h>
-#include "libft.h"
+#include "../inc/libft.h"
 
 static int		count_words(char const *s, char c);
 static size_t	strlen_mod(char const *s, char c);
@@ -37,7 +37,7 @@ char	**ft_split(char const *s, char c)
 			*(res++) = malloc(sizeof(char) * (strlen_mod(s, c) + 1));
 			if (!*(res - 1))
 			{
-				free_memory(res - 1, res_start);
+				free_memory(res, res_start);
 				return (NULL);
 			}
 			ft_strlcpy(*(res - 1), s, strlen_mod(s, c) + 1);

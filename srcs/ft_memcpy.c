@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: motuomin <motuomin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 12:43:53 by motuomin          #+#    #+#             */
-/*   Updated: 2024/04/23 12:05:19 by motuomin         ###   ########.fr       */
+/*   Created: 2024/04/16 15:53:57 by motuomin          #+#    #+#             */
+/*   Updated: 2024/04/22 16:06:35 by motuomin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Description : locates the first occurrence of c (converted to a char) in the
- * string pointed to by s. The terminating null character is considered to be
- * part of the string; therefore if c is `\0', the functions locate the
- * terminating `\0'. */
+/* Description : The memcpy() function copies n bytes from memory area src to
+ * memory area dst. If dst and src overlap, behavior is undefined. Applications
+ * in which dst and src might overlap should use memmove(3)	instead. Return
+ * value : the original value of dst. */
 
 #include <stddef.h>
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t	i;
 
+	if (!dst && !src)
+		return (dst);
 	i = 0;
-	while (s[i] != '\0')
+	while (i < n)
 	{
-		if (s[i] == (char)c)
-			return ((char *)(s + i));
+		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
 		i++;
 	}
-	if (s[i] == (char)c)
-		return ((char *)(s + i));
-	return (NULL);
+	return (dst);
 }

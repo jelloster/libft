@@ -14,7 +14,7 @@
  * the result of the concatenation of ’s1’ and ’s2’. */
 
 #include <stdlib.h>
-#include "libft.h"
+#include "../inc/libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

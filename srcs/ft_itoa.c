@@ -14,7 +14,7 @@
  * the integer received as an argument. Negative numbers must be handled. */
 
 #include <stdlib.h>
-#include "libft.h"
+#include "../inc/libft.h"
 
 static int	numlen(int n);
 

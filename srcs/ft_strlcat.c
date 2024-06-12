@@ -19,7 +19,7 @@
  *
  * Return value : length of the string they tried to create. */
 
-#include "libft.h"
+#include "../inc/libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {

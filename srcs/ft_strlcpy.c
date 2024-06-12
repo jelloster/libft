@@ -15,7 +15,7 @@
  * dst strings overlap, the behavior is undefined.
  * Return value : the length of src. */
 
-#include "libft.h"
+#include "../inc/libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {

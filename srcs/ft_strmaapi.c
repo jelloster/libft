@@ -15,7 +15,7 @@
  * malloc(3)) resulting from successive applications of ’f’. */
 
 #include <stdlib.h>
-#include "libft.h"
+#include "../inc/libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

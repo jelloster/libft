@@ -16,7 +16,7 @@
  * Since the strnstr() function is a FreeBSD specific API, it should only be
  * used when portability is not a concern. */
 
-#include "libft.h"
+#include "../inc/libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {

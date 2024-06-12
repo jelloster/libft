@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: motuomin <motuomin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/26 09:21:49 by motuomin          #+#    #+#             */
-/*   Updated: 2024/04/22 16:09:51 by motuomin         ###   ########.fr       */
+/*   Created: 2024/04/17 14:31:19 by motuomin          #+#    #+#             */
+/*   Updated: 2024/06/12 15:14:16 by motuomin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Description : function copies at most n characters from the string s1 always
- * NUL teeminating the copied string. */
+/* Description :  contiguously allocates enough space for count objects that
+ * are size bytes of memory each and returns a pointer to the allocated memory.
+ * The allocated memory is filled with bytes of value zero. */
 
 #include <stdlib.h>
-#include "libft.h"
+#include <stdint.h>
+#include "../inc/libft.h"
 
-char	*ft_strdup(const char *s1)
+void	*ft_calloc(size_t count, size_t size)
 {
-	size_t		i;
-	char		*ptr;
+	void	*ptr;
 
-	i = 0;
-	ptr = malloc((ft_strlen(s1) + 1) * sizeof(char));
-	if (!ptr)
+	if (count && SIZE_MAX / count <= size)
 		return (NULL);
-	while (s1[i] != '\0')
-	{
-		ptr[i] = s1[i];
-		i++;
-	}
-	ptr[i] = '\0';
+	ptr = malloc(size * count);
+	if (ptr == NULL)
+		return (NULL);
+	ft_memset(ptr, 0, size * count);
 	return (ptr);
 }
