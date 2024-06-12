@@ -6,23 +6,19 @@
 /*   By: motuomin <motuomin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 17:39:31 by motuomin          #+#    #+#             */
-/*   Updated: 2024/06/12 16:10:12 by motuomin         ###   ########.fr       */
+/*   Updated: 2024/06/12 16:13:51 by motuomin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H 
 
-// ╔════════════════════════════════╗
-// ║		    Includes	        ║
-// ╚════════════════════════════════╝
+// ✧.* INCLUDES ✧.*
 
 # include <stddef.h>
 # include "ft_printf.h"
 
-// ╔════════════════════════════════╗
-// ║         Type Definitions       ║
-// ╚════════════════════════════════╝
+// ✧.* TYPE DEFINITIONS ✧.*
 
 typedef struct s_list
 {
@@ -30,9 +26,7 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-// ╔════════════════════════════════╗
-// ║       Function Prototypes      ║
-// ╚════════════════════════════════╝
+// ✧.* FUNCTION PROTOTYPES ✧.*
 
 //		Character functions
 int		ft_isalpha(int c);
