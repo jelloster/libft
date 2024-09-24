@@ -16,6 +16,7 @@
 // ✧.* INCLUDES ✧.*
 
 # include <stddef.h>
+# include <stdlib.h>
 # include "ft_printf.h"
 
 // ✧.* TYPE DEFINITIONS ✧.*
