@@ -6,7 +6,7 @@ Libft contains replicated versions of functions found in standard C libraries (a
 1. Clone the library into your project using the following command:  
 `git clone https://github.com/jelloster/libft.git`
 
-2. Include the following line in your project's header file:
+2. Include the following line in your project's header file:  
 `#include "libft/inc/libft.h"`
 
 3. Done! Your project is ready to use the functions available in libft.
